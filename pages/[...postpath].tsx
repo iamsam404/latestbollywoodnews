@@ -30,8 +30,6 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 				excerpt
 				title
 				link
-				dateGmt
-				modifiedGmt
 				content
 				author {
 					node {
@@ -83,8 +81,11 @@ const Post: React.FC<PostProps> = (props) => {
 		<>
 			<Head>
 				<meta property="og:image" content={post.featuredImage.node.sourceUrl} />
-				
-			</Head>
+				<meta property="og:image" content={post.featuredImage.node.sourceUrl} />
+        <meta property="og:image:width" content="1200" /> {/* Define the width of the image */}
+        <meta property="og:image:height" content="630" /> {/* Define the height of the image */}
+
+				</Head>
 			<div className="post-container">
 				<img
 					src={post.featuredImage.node.sourceUrl}
