@@ -82,15 +82,12 @@ const Post: React.FC<PostProps> = (props) => {
 	return (
 		<>
 			<Head>
-				<link rel="canonical" href={`https://${host}/${path}`} />
-				
 				<meta property="og:image" content={post.featuredImage.node.sourceUrl} />
 				
 			</Head>
 			<div className="post-container">
 				<img
 					src={post.featuredImage.node.sourceUrl}
-					alt={post.featuredImage.node.altText}
 				/>
 				<article dangerouslySetInnerHTML={{ __html: post.content }} />
 			</div>
